@@ -176,7 +176,7 @@ public class SeMethods extends HtmlReporter implements WdMethods{
 
 	public void verifyExactText(WebElement ele, String expectedText) {
 		try {
-			if(getText(ele).equals(expectedText)) {
+			if(getText(ele).equalsIgnoreCase(expectedText)) {
 				reportStep("The text: "+getText(ele)+" matches with the value :"+expectedText,"pass");
 			}else {
 				reportStep("The text "+getText(ele)+" doesn't matches the actual "+expectedText,"fail");

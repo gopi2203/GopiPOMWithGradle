@@ -12,10 +12,17 @@ public class MyLeadsPage extends ProjectMethods{
 		click(eleCreateLead);
 		return new CreateLeadPage();
 	}
-	public FindLeadsPage clickFindLeads() {
+	
+	public FindLeadsPage clickFindLeadsLink() {
 		WebElement eleFindLeads = locateElement("linktext", "Find Leads");
 		click(eleFindLeads);
 		return new FindLeadsPage();
+	}
+
+	public MergeLeadPage clickMergeLeads() {
+		WebElement eleMergeLeads = locateElement("linktext", "Merge Leads");
+		click(eleMergeLeads);
+		return new MergeLeadPage();
 	}
 
 }

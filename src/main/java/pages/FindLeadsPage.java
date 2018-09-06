@@ -9,37 +9,61 @@ import wdMethods.ProjectMethods;
 
 public class FindLeadsPage extends ProjectMethods{
 
-	public FindLeadsPage() {
-		PageFactory.initElements(driver, this);
-	}
-	@CacheLookup
-	@FindBy(xpath="(//input[@name='firstName'])[3]")
-	WebElement eleFirstName;
-	
+	//	public FindLeadsPage() {
+	//		PageFactory.initElements(driver, this);
+	//	}
+	//	@CacheLookup
+	//	@FindBy(xpath="(//input[@name='firstName'])[3]")
+	//	WebElement eleFirstName;
+
 	public FindLeadsPage typeFirstName(String data) {
-//		WebElement eleFirstName = locateElement("xpath", "(//input[@name='firstName'])[3]");
+		WebElement eleFirstName = locateElement("xpath", "(//input[@name='firstName'])[3]");
 		type(eleFirstName, data);
 		return this;
 	}
-	
-	
-	
-	public FindLeadsPage clickFindLeads() {
+
+	public FindLeadsPage typeLeadId(String data) {
+		WebElement eleLeadID = locateElement("name", "id");
+		type(eleLeadID, data);
+		return this;
+	}
+
+	public FindLeadsPage clickEmail(String data) {
+		WebElement clickEmail = locateElement("xpath", "//span[text()='Email']");
+		click(clickEmail);
+		WebElement eleEmail = locateElement("name", "emailAddress");
+		type(eleEmail, data);
+		return this;
+	}
+
+	public FindLeadsPage clickFindLeadsButton() {
 		WebElement eleFindLeads = locateElement("xpath", "//button[text()='Find Leads']");
 		click(eleFindLeads);
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return this;
 	}
-	
+
+	public FindLeadsPage verifyDeleteLead() throws InterruptedException {
+		WebElement getOutput = locateElement("xpath", "//div[text()='No records to display']");
+		getText(getOutput);
+		verifyExactText(getOutput, "No records to display");
+		return this;
+	}
+
 	public ViewLeadsPage clickLeadIDLink() throws InterruptedException {
-		WebElement eleLeadIDLink = locateElement("xpath", "//div[@class='x-grid3-cell-inner x-grid3-col-partyId']/a");
+		WebElement eleLeadIDLink = locateElement("xpath", "(//a[@class='linktext'])[4]");
 		click(eleLeadIDLink);
 		return new ViewLeadsPage();
+	}
+
+	public MergeLeadPage clickLeadIDLinkWithNoSnap() throws InterruptedException {
+		WebElement eleLeadIDLinkWithNoSnap = locateElement("xpath", "(//a[@class='linktext'])[1]");
+		clickWithNoSnap(eleLeadIDLinkWithNoSnap);
+		return new MergeLeadPage();
 	}
 }
 

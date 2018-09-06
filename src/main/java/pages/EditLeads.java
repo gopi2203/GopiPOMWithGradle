@@ -11,10 +11,7 @@ public class EditLeads extends ProjectMethods{
 		type(eleFirstName, data);
 		return this;
 	}
-	
-	
-	
-		
+
 	public ViewLeadsPage clickUpdate() {
 		WebElement eleUpdate = locateElement("name", "submitButton");
 		click(eleUpdate);

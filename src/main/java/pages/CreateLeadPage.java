@@ -11,7 +11,7 @@ public class CreateLeadPage extends ProjectMethods{
 		type(eleCompanyName, data);
 		return this;
 	}
-	
+
 	public CreateLeadPage typeFirstName	(String data) {
 		WebElement eleFirstName = locateElement("id", "createLeadForm_firstName");
 		type(eleFirstName, data);
@@ -22,13 +22,18 @@ public class CreateLeadPage extends ProjectMethods{
 		type(eleLastName, data);
 		return this;
 	}
-	
-	public CreateLeadPage clickCreateLead() {
+
+	public CreateLeadPage typeEmail	(String data) {
+		WebElement setEmail = locateElement("id", "createLeadForm_primaryEmail");
+		type(setEmail,data);
+		return this;
+	}
+
+	public ViewLeadsPage clickCreateLead() {
 		WebElement eleCreateLead= locateElement("class", "smallSubmit");
 		click(eleCreateLead);
-		return this; 
+		return new ViewLeadsPage();
 	}
-	
 }
 
 
