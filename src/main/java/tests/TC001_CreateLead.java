@@ -14,10 +14,10 @@ public class TC001_CreateLead extends ProjectMethods {
 		testCaseDescription ="Create a lead";
 		category = "Smoke";
 		author= "Babu";
-		dataSheetName="TC001";
+		dataSheetName="CreateLead";
 	}
 	@Test(dataProvider="fetchData")
-	public  void createLead(String cname, String fname, String lname, String email)   {
+	public  void createLead(String cname, String fname, String lname)   {
 		new MyHomePage()
 		.clickLeads()
 		.clickCreateLead()

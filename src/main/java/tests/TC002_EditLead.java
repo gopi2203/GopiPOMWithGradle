@@ -14,15 +14,15 @@ public class TC002_EditLead extends ProjectMethods {
 		testCaseDescription ="Create a lead";
 		category = "Smoke";
 		author= "Babu";
-		dataSheetName="TC002";
+		dataSheetName="EditLead";
 	}
 	@Test(dataProvider="fetchData")
 	public  void editLead(String firstName,String updateFirstName) throws InterruptedException   {
 		new MyHomePage()
 		.clickLeads()
-		.clickFindLeads()
+		.clickFindLeadsLink()
 		.typeFirstName(firstName)
-		.clickFindLeads()
+		.clickFindLeadsButton()
 		.clickLeadIDLink()
 		.clickEdit()
 		.typeFirstName(updateFirstName)
