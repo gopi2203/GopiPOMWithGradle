@@ -7,7 +7,7 @@ import pages.MyHomePage;
 import wdMethods.ProjectMethods;
 
 public class TC001_CreateLead extends ProjectMethods {
-	
+
 	@BeforeClass
 	public void setData() {
 		testCaseName = "TC001_CreateLead";
@@ -25,9 +25,9 @@ public class TC001_CreateLead extends ProjectMethods {
 		.typeFirstName(fname)
 		.typeLastName(lname)
 		.clickCreateLead();
-		
-		
+
+
 	}
-	
+
 
 }
