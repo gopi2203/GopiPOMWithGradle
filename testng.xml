@@ -9,7 +9,7 @@
 			<class name="tests.TC004_MergeLead" />
 			<!-- <class name="tests.TC001_CreateLead" /> -->
 			<class name="tests.TC005_DuplicateLead" />
-			<class name="tests.TC002_EditLead" />
+			<!-- <class name="tests.TC002_EditLead" /> -->
 			<class name="tests.TC003_DeleteLead" />
 		</classes>
 	</test> <!-- Test -->
